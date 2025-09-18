@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wester Juniors - Tu banco de confianza</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Model Viewer (for 3D models) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</head>
+<body class="font-['Inter'] bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">WJ</div>
+                <span class="text-xl font-bold text-gray-800">Wester Juniors</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="#prestamos" class="text-gray-700 hover:text-blue-600 transition-colors">Préstamos</a>
+                <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition-colors">Servicios</a>
+                <a href="#nosotros" class="text-gray-700 hover:text-blue-600 transition-colors">Nosotros</a>
+                <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- CTA Button -->
+            <button class="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors transform hover:scale-105">
+                Solicita tu préstamo
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#inicio" class="text-gray-700 hover:text-blue-600 py-2">Inicio</a>
+                <a href="#prestamos" class="text-gray-700 hover:text-blue-600 py-2">Préstamos</a>
+                <a href="#servicios" class="text-gray-700 hover:text-blue-600 py-2">Servicios</a>
+                <a href="#nosotros" class="text-gray-700 hover:text-blue-600 py-2">Nosotros</a>
+                <a href="#contacto" class="text-gray-700 hover:text-blue-600 py-2">Contacto</a>
+                <button class="w-full bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors mt-2">
+                    Solicita tu préstamo
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Hero Text -->
+                <div class="md:w-1/2 mb-12 md:mb-0 animate-fadeIn">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        Tus sueños,<br>
+                        <span class="text-blue-600">nuestra prioridad</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        En Wester Juniors te ofrecemos las mejores soluciones financieras para hacer realidad tus proyectos personales, familiares y empresariales.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-blue-600 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors transform hover:scale-105">
+                            Conoce nuestros préstamos
+                        </button>
+                        <button class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-medium hover:bg-blue-50 transition-colors">
+                            Asesoría gratuita
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Image/3D Model -->
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-lg">
+                        <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-6"></div>
+                        <div class="relative bg-white p-2 rounded-3xl shadow-xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1554224155-3a58922a22c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Finanzas personales" 
+                                 class="rounded-2xl w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Préstamos Section -->
+        <section id="prestamos" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Préstamos para todos tus proyectos</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Préstamo Hipotecario -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-home text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Préstamo Hipotecario</h3>
+                            <p class="text-gray-600 mb-4">Haz realidad el sueño de tu casa propia con nuestras tasas preferenciales y plazos flexibles.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Hasta 30 años de plazo</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Tasas desde 7.9%</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Hasta el 90% de financiamiento</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                                Solicitar información
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Préstamo Personal -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                            <i class="fas fa-wallet text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Préstamo Personal</h3>
+                            <p class="text-gray-600 mb-4">Para lo que necesites, con desembolso rápido y sin tantos requisitos.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Hasta 84 meses de plazo</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Tasas desde 12.9%</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Respuesta en 24 horas</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">
+                                Solicitar información
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Préstamo Empresarial -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-building text-white text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Préstamo Empresarial</h3>
+                            <p class="text-gray-600 mb-4">Impulsa el crecimiento de tu negocio con capital de trabajo o inversión.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Hasta 10 años de plazo</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Tasas desde 9.9%</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Monto desde $50,000</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+                                Solicitar información
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora de Préstamos -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <!-- Formulario -->
+                        <div class="p-8 md:w-1/2">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Calcula tu préstamo</h2>
+                            
+                            <div class="space-y-6">
+                                <!-- Tipo de Préstamo -->
+                                <div>
+                                    <label for="loan-type" class="block text-sm font-medium text-gray-700 mb-1">Tipo de préstamo</label>
+                                    <select id="loan-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <option value="hipotecario">Hipotecario</option>
+                                        <option value="personal">Personal</option>
+                                        <option value="empresarial">Empresarial</option>
+                                    </select>
+                                </div>
+
+                                <!-- Monto -->
+                                <div>
+                                    <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Monto ($)</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-gray-500">$</span>
+                                        </div>
+                                        <input type="number" id="amount" min="1000" step="1000" value="100000" 
+                                               class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                        <span>$1,000</span>
+                                        <span>$1,000,000</span>
+                                    </div>
+                                    <input type="range" id="amount-range" min="1000" max="1000000" value="100000" step="1000" 
+                                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                </div>
+
+                                <!-- Plazo -->
+                                <div>
+                                    <label for="term" class="block text-sm font-medium text-gray-700 mb-1">Plazo (años)</label>
+                                    <input type="number" id="term" min="1" max="30" value="10" 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="range" id="term-range" min="1" max="30" value="10" 
+                                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mt-2">
+                                </div>
+
+                                <!-- Tasa de interés -->
+                                <div>
+                                    <label for="rate" class="block text-sm font-medium text-gray-700 mb-1">Tasa de interés anual (%)</label>
+                                    <div class="relative">
+                                        <input type="number" id="rate" step="0.1" value="9.9" 
+                                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <span class="text-gray-500">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resultados -->
+                        <div class="bg-blue-600 text-white p-8 md:w-1/2 flex flex-col justify-center">
+                            <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold mb-2">Cuota mensual estimada</h3>
+                                <p class="text-blue-100">Tu pago mensual sería de:</p>
+                                <div class="text-4xl font-bold my-4" id="monthly-payment">$1,100.50</div>
+                                <p class="text-sm text-blue-100">* Cálculo estimado. Las condiciones pueden variar.</p>
+                            </div>
+                            
+                            <div class="bg-blue-700 p-4 rounded-lg">
+                                <div class="flex justify-between mb-2">
+                                    <span>Monto del préstamo:</span>
+                                    <span id="loan-amount">$100,000</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Interés total:</span>
+                                    <span id="total-interest">$32,060.00</span>
+                                </div>
+                                <div class="flex justify-between font-bold text-lg pt-2 border-t border-blue-600">
+                                    <span>Total a pagar:</span>
+                                    <span id="total-payment">$132,060.00</span>
+                                </div>
+                            </div>
+
+                            <button class="w-full mt-6 bg-white text-blue-600 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">
+                                Solicitar este préstamo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Por qué elegirnos -->
+        <section id="servicios" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Por qué elegir Wester Juniors?</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-tie text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Atención personalizada</h3>
+                        <p class="text-gray-600">Asesores expertos que te guiarán en cada paso del proceso.</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Rapidez</h3>
+                        <p class="text-gray-600">Respuesta en 24 horas y desembolsos en tiempo récord.</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-percentage text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Tasas competitivas</h3>
+                        <p class="text-gray-600">Las mejores tasas del mercado para que ahorres dinero.</p>
+                    </div>
+
+                    <div class="text-center p-6 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Seguridad garantizada</h3>
+                        <p class="text-gray-600">Tus datos y transacciones están protegidos con los más altos estándares.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonio 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente satisfecho" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-900">María González</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Gracias a Wester Juniors pude comprar mi primera casa. El proceso fue muy sencillo y la tasa que me ofrecieron fue la mejor del mercado."</p>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-900">Carlos Mendoza</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Excelente servicio al cliente. Me ayudaron a conseguir un préstamo para mi negocio cuando otros bancos me dijeron que no. ¡Muy recomendados!"</p>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente satisfecho" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold text-gray-900">Laura Ramírez</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"El proceso fue muy rápido y sin complicaciones. En menos de una semana ya tenía el dinero en mi cuenta. Definitivamente volveré a confiar en ellos."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <!-- Formulario de contacto -->
+                        <div class="p-8 md:w-1/2">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">Contáctanos</h2>
+                            <p class="text-gray-600 mb-6">¿Tienes alguna pregunta? Escríbenos y te responderemos a la brevedad.</p>
+                            
+                            <form id="contact-form" class="space-y-4" action="https://formsubmit.co/goyajuanandres11@gmail.com" method="POST">
+    <!-- Campo oculto para redirección después de enviar -->
+    <input type="hidden" name="_next" value="https://westerjuniors.com/gracias.html">
+    <!-- Campo oculto para desactivar captcha de Formsubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Campo honeypot para evitar spam -->
+    <input type="text" name="_honey" style="display:none">
+
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                                    <input type="text" id="name" required 
+                                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                                        <input type="email" id="email" required 
+                                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                                        <input type="tel" id="phone" 
+                                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="loan-type-contact" class="block text-sm font-medium text-gray-700 mb-1">Tipo de préstamo</label>
+                                    <select id="loan-type-contact" 
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="hipotecario">Hipotecario</option>
+                                        <option value="personal">Personal</option>
+                                        <option value="empresarial">Empresarial</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                                    <textarea id="message" rows="4" 
+                                              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors transform hover:scale-105">
+    Enviar mensaje
+</button>
+<div id="contact-success" class="hidden text-green-600 text-center font-semibold mt-4">¡Mensaje enviado correctamente!</div>
+                            </form>
+                        </div>
+                        
+                        <!-- Información de contacto -->
+                        <div class="bg-gray-50 p-8 md:w-1/2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-6">Información de contacto</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-blue-100 p-2 rounded-full">
+                                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-medium text-gray-900">Dirección</h4>
+                                        <p class="text-gray-600">Av. Principal #1234, Col. Centro<br>Ciudad de México, 06000</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-green-100 p-2 rounded-full">
+                                        <i class="fas fa-phone-alt text-green-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-medium text-gray-900">Teléfonos</h4>
+                                        <p class="text-gray-600">+52 55 1234 5678<br>800 123 4567</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-purple-100 p-2 rounded-full">
+                                        <i class="fas fa-envelope text-purple-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-medium text-gray-900">Correo electrónico</h4>
+                                        <p class="text-gray-600">contacto@westerjuniors.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-yellow-100 p-2 rounded-full">
+                                        <i class="fas fa-clock text-yellow-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-medium text-gray-900">Horario de atención</h4>
+                                        <p class="text-gray-600">Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-medium text-gray-900 mb-3">Síguenos en redes sociales</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo y descripción -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">WJ</div>
+                        <span class="text-xl font-bold">Wester Juniors</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Tu socio financiero de confianza, comprometido con tu crecimiento y bienestar económico.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#prestamos" class="text-gray-400 hover:text-white transition-colors">Préstamos</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-white transition-colors">Sobre nosotros</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Nuestros servicios -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Nuestros servicios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Préstamos hipotecarios</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Préstamos personales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Préstamos empresariales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Inversiones</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Seguros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Boletín informativo -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Boletín informativo</h3>
+                    <p class="text-gray-400 mb-4">Suscríbete para recibir nuestras ofertas y noticias.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Tu correo electrónico" 
+                               class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 rounded-r-lg transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">&copy; 2023 Wester Juniors. Todos los derechos reservados.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Términos y condiciones</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Política de privacidad</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Aviso legal</a>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center md:text-right">
+                    <p class="text-xs text-gray-500">Wester Juniors es una entidad financiera regulada por las autoridades correspondientes.</p>
+                    <p class="text-xs text-gray-500 mt-1">Las operaciones están sujetas a aprobación de crédito. Consulta términos y condiciones.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+   <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
+            verify: { projectID: '68cc1a8aced2b0251b3a8a10' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+                url: "https://runtime-api.voiceflow.com"
+            }
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
